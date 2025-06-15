@@ -1,8 +1,11 @@
 import AddToFavourite from "./AddToFavourite";
 import WeatherCondition from "./WeatherCondition";
 import WeatherHeadline from "./WeatherHeadline";
+import {useWeather} from "../../hooks"
 
 export default function WeatherBoard(){
+	const {loading, error, weatherData} = useWeather();
+	console.log(weatherData, error, loading)
     return (
         <div className="container">
 				<div
