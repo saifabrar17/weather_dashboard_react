@@ -4,11 +4,11 @@ const FavouriteProvider = ({ children }) => {
   const [favourites, setFavourites] = useLocalStorage("favourites", []);
 
   const addToFavourites = (latitude, longitude, location) => {
-    setFavourites(...favourites, {
+    setFavourites([...favourites, {
       latitude: latitude,
-      longitude: location,
+      longitude: longitude,
       location: location,
-    });
+    }]);
   };
   const removeFromFavourites = (location) => {
     const restFavourites = favourites.filter(
@@ -17,7 +17,7 @@ const FavouriteProvider = ({ children }) => {
 
     setFavourites(restFavourites);
   };
-  return <FavouriteContext.Provider>{children}</FavouriteContext.Provider>;
+  return <FavouriteContext.Provider value={{ favourites, addToFavourites, removeFromFavourites }}>{children}</FavouriteContext.Provider>;
 };
 
 export default FavouriteProvider;
