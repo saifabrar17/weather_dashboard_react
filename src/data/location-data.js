@@ -48,6 +48,16 @@ const data = [
         location: "Cape Town",
         latitude: -33.9249,
         longitude: 18.4241,
+    },
+    {
+        location: "Rothera Point",
+        latitude: 67.5678,
+        longitude: 68.1267,
+    },
+    {
+        location: "Reykjavik",
+        latitude: 64.1466,
+        longitude: -21.9426,
     }
 ];
 
